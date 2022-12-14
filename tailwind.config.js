@@ -9,6 +9,9 @@ module.exports = {
       'auto-fill': 'repeat(auto-fill,minmax(200px,1fr))'
     },
     extend: {
+      width: {
+        '90': '20rem'
+      },
       colors: {
         primary: '#2874F1',
         secondary: '#fb641b',
