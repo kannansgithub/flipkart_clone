@@ -1,7 +1,10 @@
+import Banner from '../components/Banner/Banner';
+import CarouselSlide from '../components/CarouselSlide/CarouselSlide';
+
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold underline text-green-500">
-      Hello world!
-    </h1>
+    <>
+      <Banner />
+    </>
   );
 }
