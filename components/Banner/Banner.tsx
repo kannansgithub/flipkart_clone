@@ -1,28 +1,43 @@
 /* eslint-disable @next/next/no-img-element */
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import Carousel from 'react-multi-carousel';
 import { BannerItems } from '../../configs/BannerItems';
-import NextButton from './NextButton';
-import PrevButton from './PrevButton';
-const handleArrowPrev = () => {
-  return true;
+import NextButton from '../ArrowButtons/NextButton';
+import PrevButton from '../ArrowButtons/PrevButton';
+
+import 'react-multi-carousel/lib/styles.css';
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 1,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
 };
+
 const Banner = () => {
   return (
     <div className="relative h-90  m-3">
       <Carousel
         autoPlay
-        infiniteLoop
-        showStatus={false}
-        showIndicators={false}
-        showThumbs={false}
-        interval={5000}
-        renderArrowNext={(onClickHandler: React.MouseEventHandler<Element>) => (
-          <NextButton onClick={onClickHandler} />
-        )}
-        renderArrowPrev={(onClickHandler: React.MouseEventHandler<Element>) => (
-          <PrevButton onClick={onClickHandler} />
-        )}
+        responsive={responsive}
+        showDots={false}
+        infinite={true}
+        keyBoardControl={true}
+        autoPlaySpeed={5000}
+        customLeftArrow={<PrevButton />}
+        customRightArrow={<NextButton />}
       >
         {BannerItems.map((item, index) => {
           return (
