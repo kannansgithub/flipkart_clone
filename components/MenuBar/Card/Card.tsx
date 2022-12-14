@@ -14,7 +14,7 @@ const Card = ({ title, imageUrl, sufixImageUrl }: Props) => {
         <div className="relative flex flex-col h-full z-10 text-center align-middle  hover:text-primary cursor-pointer items-center">
           <Image src={imageUrl} height={110} width={80} alt={title} />
           <div className="flex">
-            <p className="text-lg font-semibold">{title}</p>
+            <p className="text-md font-semibold">{title}</p>
 
             {/* {sufixImageUrl ? (
               <Image

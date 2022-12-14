@@ -12,13 +12,20 @@ module.exports = {
       width: {
         '90': '20rem'
       },
+      height: {
+        '90': '22rem'
+      },
       colors: {
         primary: '#2874F1',
         secondary: '#fb641b',
         tertiary: '#ff9f00',
         plus: '#ffe500',
         lightgray: '#f1f3f6'
+      },
+      fontSize: {
+        'md': '16px'
       }
+
     },
   },
   fontFamily: {
