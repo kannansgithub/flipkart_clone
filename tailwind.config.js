@@ -5,7 +5,33 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    gridTemplateColumns: {
+      'auto-fill': 'repeat(auto-fill,minmax(200px,1fr))'
+    },
+    extend: {
+      colors: {
+        primary: '#2874F1',
+        secondary: '#fb641b',
+        tertiary: '#ff9f00',
+        plus: '#ffe500',
+        lightgray: '#f1f3f6'
+      }
+    },
   },
-  plugins: [],
+  fontFamily: {
+    roboto: ['Roboto', 'Arial', 'sans-serif']
+  },
+
+  plugins: [
+    function ({ addUtilities })
+    {
+      const extendUnderline = {
+        '.underline': {
+          'textDecoration': 'underline',
+          'text-decoration-color': 'white',
+        },
+      }
+      addUtilities(extendUnderline)
+    }
+  ],
 }
