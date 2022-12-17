@@ -1,4 +1,5 @@
 import Banner from '../components/Banner/Banner';
+import ProductSlider from '../components/LandingPage/ProductSlider';
 import MenuBar from '../components/MenuBar/MenuBar';
 import Navbar from '../components/Navbar/Navbar';
 
@@ -8,9 +9,7 @@ export default function Home() {
       <Navbar />
       <MenuBar />
       <Banner />
-      <div className=" h-full w-full">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      </div>
+      <ProductSlider />
     </div>
   );
 }
