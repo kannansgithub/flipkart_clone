@@ -1,9 +1,10 @@
-import React from 'react';
+import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import { ResponsiveWithThreeImage } from '../../../configs/BannerConfig';
+import { RightBannerImage } from '../../../configs/TopOffer';
 import { Product } from '../../../models/Product';
-import NextButton from '../Shared/ArrowButtons/NextButton';
-import PrevButton from '../Shared/ArrowButtons/PrevButton';
+import NextButton from '../../ArrowButtons/NextButton';
+import PrevButton from '../../ArrowButtons/PrevButton';
 import Header from '../Shared/Header/Header';
 import ProductCard from '../Shared/ProductCard/ProductCard';
 
@@ -13,19 +14,18 @@ type Props = {
   imgUrl: string;
   redirectUrl: string;
 };
+const GetRandomImagePath = () => {
+  const index = Math.floor(Math.random() * RightBannerImage.length);
+  return RightBannerImage[index];
+};
 
-const BannerWithSideTitle = ({
-  productList,
-  title,
-  imgUrl,
-  redirectUrl,
-}: Props) => {
+const HotDealBanner = ({ productList, title, imgUrl, redirectUrl }: Props) => {
   return (
     <>
       <div className="w-1/5 h-full">
         <Header title={title} imgUrl={imgUrl} redirectionUrl={redirectUrl} />
       </div>
-      <div className="w-4/5">
+      <div className="w-3/5">
         <Carousel
           autoPlay={false}
           responsive={ResponsiveWithThreeImage}
@@ -48,7 +48,19 @@ const BannerWithSideTitle = ({
           })}
         </Carousel>
       </div>
+      <div className="w-1/5 h-full">
+        <div className="h-full w-full relative cursor-pointer">
+          <Image
+            src={GetRandomImagePath()}
+            fill
+            object-fill
+            object-position="center"
+            alt="product category"
+          />
+        </div>
+      </div>
     </>
   );
 };
-export default BannerWithSideTitle;
+
+export default HotDealBanner;
