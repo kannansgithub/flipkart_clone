@@ -4,6 +4,7 @@ import { Product } from '../../models/Product';
 import { FetchProducts } from '../../states/actions/Product.Action';
 import { RootState } from '../../states/state/RootState';
 import BannerWithSideTitle from './BannerWithSideTitle/BannerWithSideTitle';
+import HotDealBanner from './HotDealBanner/HotDealBanner';
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 type Props = PropsFromRedux & {};
@@ -20,6 +21,16 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
       {electronicList?.length > 0 ? (
         <div className="bg-white h-96 mx-2 rounded-sm flex my-2">
           <BannerWithSideTitle
+            title="Best of Electronics"
+            productList={electronicList}
+            imgUrl="/img/productheaders/Electronics.jpg"
+            redirectUrl="/"
+          />
+        </div>
+      ) : null}
+      {electronicList?.length > 0 ? (
+        <div className="bg-white h-96 mx-2 rounded-sm flex my-2">
+          <HotDealBanner
             title="Best of Electronics"
             productList={electronicList}
             imgUrl="/img/productheaders/Electronics.jpg"

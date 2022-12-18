@@ -1,9 +1,8 @@
-import React from 'react';
 import Carousel from 'react-multi-carousel';
 import { ResponsiveWithThreeImage } from '../../../configs/BannerConfig';
 import { Product } from '../../../models/Product';
-import NextButton from '../Shared/ArrowButtons/NextButton';
-import PrevButton from '../Shared/ArrowButtons/PrevButton';
+import NextButton from '../../ArrowButtons/NextButton';
+import PrevButton from '../../ArrowButtons/PrevButton';
 import Header from '../Shared/Header/Header';
 import ProductCard from '../Shared/ProductCard/ProductCard';
 
@@ -14,18 +13,13 @@ type Props = {
   redirectUrl: string;
 };
 
-const BannerWithSideTitle = ({
-  productList,
-  title,
-  imgUrl,
-  redirectUrl,
-}: Props) => {
+const HotDealBanner = ({ productList, title, imgUrl, redirectUrl }: Props) => {
   return (
     <>
       <div className="w-1/5 h-full">
         <Header title={title} imgUrl={imgUrl} redirectionUrl={redirectUrl} />
       </div>
-      <div className="w-4/5">
+      <div className="w-3/5">
         <Carousel
           autoPlay={false}
           responsive={ResponsiveWithThreeImage}
@@ -48,7 +42,11 @@ const BannerWithSideTitle = ({
           })}
         </Carousel>
       </div>
+      <div className="w-1/5 h-full">
+        <Header title={title} imgUrl={imgUrl} redirectionUrl={redirectUrl} />
+      </div>
     </>
   );
 };
-export default BannerWithSideTitle;
+
+export default HotDealBanner;
