@@ -71,15 +71,17 @@ const Footer = ({}: Props) => {
               <li className="cursor-pointer hover:underline py-1">Youtube</li>
             </ul>
           </div>
-          <div>
-            <h2 className="text-fheader">Mail Us:</h2>
-            <div className="text-white flex flex-col py-1">
-              <span>Flipkart Internet Private Limited,</span>
-              <span>Buildings Alyssa, Begonia &</span>
-              <span>Clove Embassy Tech Village,</span>
-              <span>Outer Ring Road, Devarabeesanahalli Village,</span>
-              <span>Bengaluru, 560103,</span>
-              <span>Karnataka, India</span>
+          <div className="">
+            <div className="border-l pl-9 border-fborder">
+              <h2 className="text-fheader">Mail Us:</h2>
+              <div className="text-white flex flex-col py-1">
+                <span>Flipkart Internet Private Limited,</span>
+                <span>Buildings Alyssa, Begonia &</span>
+                <span>Clove Embassy Tech Village,</span>
+                <span>Outer Ring Road, Devarabeesanahalli Village,</span>
+                <span>Bengaluru, 560103,</span>
+                <span>Karnataka, India</span>
+              </div>
             </div>
           </div>
           <div className="">
