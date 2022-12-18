@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import { ResponsiveWithThreeImage } from '../../../configs/BannerConfig';
+import { RightBannerImage } from '../../../configs/TopOffer';
 import { Product } from '../../../models/Product';
 import NextButton from '../../ArrowButtons/NextButton';
 import PrevButton from '../../ArrowButtons/PrevButton';
@@ -11,6 +13,10 @@ type Props = {
   title: string;
   imgUrl: string;
   redirectUrl: string;
+};
+const GetRandomImagePath = () => {
+  const index = Math.floor(Math.random() * RightBannerImage.length);
+  return RightBannerImage[index];
 };
 
 const HotDealBanner = ({ productList, title, imgUrl, redirectUrl }: Props) => {
@@ -43,7 +49,15 @@ const HotDealBanner = ({ productList, title, imgUrl, redirectUrl }: Props) => {
         </Carousel>
       </div>
       <div className="w-1/5 h-full">
-        <Header title={title} imgUrl={imgUrl} redirectionUrl={redirectUrl} />
+        <div className="h-full w-full relative cursor-pointer">
+          <Image
+            src={GetRandomImagePath()}
+            fill
+            object-fill
+            object-position="center"
+            alt="product category"
+          />
+        </div>
       </div>
     </>
   );

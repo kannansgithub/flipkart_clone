@@ -15,7 +15,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
   }, [fetchProduct]);
 
   const electronicList = products?.filter((x) => x.category === 'smartphones');
-
+  const applianceList = products?.filter((x) => x.category === 'fragrances');
   return (
     <div className="flex flex-col">
       {electronicList?.length > 0 ? (
@@ -28,12 +28,12 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
           />
         </div>
       ) : null}
-      {electronicList?.length > 0 ? (
+      {applianceList?.length > 0 ? (
         <div className="bg-white h-96 mx-2 rounded-sm flex my-2">
           <HotDealBanner
-            title="Best of Electronics"
-            productList={electronicList}
-            imgUrl="/img/productheaders/Electronics.jpg"
+            title="Top Offers"
+            productList={applianceList}
+            imgUrl="/img/productheaders/Essentials.jpg"
             redirectUrl="/"
           />
         </div>

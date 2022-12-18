@@ -7,10 +7,10 @@ const NextButton = ({ onClick }: Props) => {
     <>
       <button
         type="button"
-        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full group focus:outline-none cursor-default"
+        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full group focus:outline-none cursor-default drop-shadow"
         onClick={onClick}
       >
-        <span className="inline-flex items-center justify-center w-10 h-8 rounded-l-md py-16 px-2 sm:w-10 sm:h-10 bg-white group-focus:outline-none">
+        <span className="inline-flex items-center justify-center w-10 h-8 rounded-l-md py-16 px-2 sm:w-10 sm:h-10 drop-shadow-lg bg-slate-100 cursor-default group-focus:outline-none">
           <svg
             aria-hidden="true"
             className="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
