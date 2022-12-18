@@ -20,7 +20,10 @@ module.exports = {
         secondary: '#fb641b',
         tertiary: '#ff9f00',
         plus: '#ffe500',
-        lightgray: '#f1f3f6'
+        lightgray: '#f1f3f6',
+        footer: '#172337',
+        fheader: '#878787',
+        fborder: '#454d5e'
       },
       fontSize: {
         'md': '16px'
