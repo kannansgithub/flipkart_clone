@@ -9,6 +9,7 @@ import { Product } from '../../models/Product';
 import { FetchProducts } from '../../states/actions/Product.Action';
 import { RootState } from '../../states/state/RootState';
 import BannerWithSideTitle from './BannerWithSideTitle/BannerWithSideTitle';
+import BannerWithTopTitle from './BannerWithTopTitle/BannerWithTopTitle';
 import HotDealBanner from './HotDealBanner/HotDealBanner';
 import ImageBanner from './ImageBanner/ImageBanner';
 
@@ -19,7 +20,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
   useEffect(() => {
     fetchProduct();
   }, [fetchProduct]);
-
+  const essentialsList = products?.filter((x) => x.category === 'smartphones');
   const electronicList = products?.filter((x) => x.category === 'smartphones');
   const applianceList = products?.filter((x) => x.category === 'fragrances');
   return (
@@ -68,6 +69,15 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
           <ImageBanner
             className="h-72"
             imageList={ImageBanner3}
+            redirectUrl="/"
+          />
+        </div>
+      ) : null}
+      {essentialsList?.length > 0 ? (
+        <div className="bg-white h-auto mx-2 rounded-sm flex my-2">
+          <BannerWithTopTitle
+            title="Featured Brands"
+            productList={essentialsList}
             redirectUrl="/"
           />
         </div>
