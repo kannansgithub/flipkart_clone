@@ -14,7 +14,7 @@ const Header = ({ title, imgUrl, redirectionUrl }: Props) => {
         <Image
           src={imgUrl}
           fill
-          oobject-fill
+          object-fill
           object-position="center"
           alt="product category"
         />
@@ -25,7 +25,7 @@ const Header = ({ title, imgUrl, redirectionUrl }: Props) => {
           <div className="flex flex-col gap-6">
             <h2 className="text-4xl">{title}</h2>
             <div className="">
-              <ViewAllButton />
+              <ViewAllButton rediectUrl={redirectionUrl} />
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
 import Carousel from 'react-multi-carousel';
 import { ResponsiveWithThreeImage } from '../../../configs/BannerConfig';
 import { Product } from '../../../models/Product';
-import NextButton from '../Shared/ArrowButtons/NextButton';
-import PrevButton from '../Shared/ArrowButtons/PrevButton';
+import NextButton from '../../Shared/ArrowButtons/NextButton';
+import PrevButton from '../../Shared/ArrowButtons/PrevButton';
 
 import ProductCard from './ProductCard/ProductCard';
 

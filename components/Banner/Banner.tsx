@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Carousel from 'react-multi-carousel';
 import { BannerItems } from '../../configs/BannerItems';
-import NextButton from '../ArrowButtons/NextButton';
-import PrevButton from '../ArrowButtons/PrevButton';
 
 import 'react-multi-carousel/lib/styles.css';
 import { ResponsiveWithOneImage } from '../../configs/BannerConfig';
+import PrevButton from '../Shared/ArrowButtons/PrevButton';
+import NextButton from '../Shared/ArrowButtons/NextButton';
 
 const Banner = () => {
   return (
