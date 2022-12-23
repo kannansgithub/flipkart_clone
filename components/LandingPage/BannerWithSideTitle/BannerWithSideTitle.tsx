@@ -2,10 +2,10 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import { ResponsiveWithThreeImage } from '../../../configs/BannerConfig';
 import { Product } from '../../../models/Product';
-import NextButton from '../Shared/ArrowButtons/NextButton';
-import PrevButton from '../Shared/ArrowButtons/PrevButton';
-import Header from '../Shared/Header/Header';
-import ProductCard from '../Shared/ProductCard/ProductCard';
+import NextButton from '../../Shared/ArrowButtons/NextButton';
+import PrevButton from '../../Shared/ArrowButtons/PrevButton';
+import Header from '../../Shared/Header/Header';
+import ProductCard from '../../Shared/ProductCard/ProductCard';
 
 type Props = {
   productList: Product[];

@@ -31,7 +31,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
             title="Top Offers"
             productList={applianceList}
             imgUrl="/img/productheaders/Essentials.jpg"
-            redirectUrl="/"
+            redirectUrl="/offer-list/smartphones"
           />
         </div>
       ) : null}
@@ -40,7 +40,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
           <ImageBanner
             className="h-72"
             imageList={ImageBanner1}
-            redirectUrl="/"
+            redirectUrl="/offer-list/smartphones"
           />
         </div>
       ) : null}
@@ -51,7 +51,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
             title="Best of Electronics"
             productList={electronicList}
             imgUrl="/img/productheaders/Electronics.jpg"
-            redirectUrl="/"
+            redirectUrl="/offer-list/smartphones"
           />
         </div>
       ) : null}
@@ -60,7 +60,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
           <ImageBanner
             className="h-48"
             imageList={ImageBanner2}
-            redirectUrl="/"
+            redirectUrl="/offer-list/smartphones"
           />
         </div>
       ) : null}
@@ -69,7 +69,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
           <ImageBanner
             className="h-72"
             imageList={ImageBanner3}
-            redirectUrl="/"
+            redirectUrl="/offer-list/smartphones"
           />
         </div>
       ) : null}
@@ -78,7 +78,7 @@ const ProductSlider = ({ products, fetchProduct }: Props) => {
           <BannerWithTopTitle
             title="Featured Brands"
             productList={essentialsList}
-            redirectUrl="/"
+            redirectUrl="/offer-list/smartphones"
           />
         </div>
       ) : null}
