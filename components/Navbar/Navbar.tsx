@@ -5,8 +5,12 @@ import NavLink from './NavLink/NavLink';
 import SearchInput from './SearchInput/SearchInput';
 
 import classes from './Navbar.module.css';
-
-const Navbar = () => {
+import { connect, ConnectedProps } from 'react-redux';
+import { Product } from '../../models/Product';
+import { RootState } from '../../states/state/RootState';
+type PropsFromRedux = ConnectedProps<typeof connector>;
+type Props = PropsFromRedux & {};
+const Navbar = ({ totalItems }: Props) => {
   return (
     <div className={`${classes.navbarMain}`}>
       <div className={classes.navbarContainer}>
@@ -38,10 +42,20 @@ const Navbar = () => {
         <LoginButton />
         <NavLink href="/" text="Become a Seller"></NavLink>
         <NavLink href="/" text="More" sufixIcon="/img/down-arrow.png"></NavLink>
-        <NavLink href="/" text="Cart" prefixIconUrl="/img/cart.svg"></NavLink>
+        <NavLink
+          href="/"
+          text="Cart"
+          prefixIconUrl="/img/cart.svg"
+          items={totalItems}
+        ></NavLink>
       </div>
     </div>
   );
 };
+const mapState = (state: RootState) => ({
+  totalItems: state?.productReducer?.ItemInCart.length,
+});
 
-export default Navbar;
+const mapDispatch = {};
+const connector = connect(mapState, mapDispatch);
+export default connector(Navbar);

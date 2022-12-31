@@ -14,10 +14,13 @@ module.exports = {
       },
 
       width: {
-        '90': '20rem'
+        '90': '20rem',
+        '22': '82px'
       },
       height: {
-        '90': '22rem'
+        '90': '22rem',
+        '22': '82px'
+
       },
       colors: {
         primary: '#2874F1',
@@ -28,7 +31,8 @@ module.exports = {
         footer: '#172337',
         fheader: '#878787',
         fborder: '#454d5e',
-        rating: '#388e3c'
+        rating: '#388e3c',
+        bestvalue: 'rgb(0 160 152)'
       },
       fontSize: {
         'md': '16px'

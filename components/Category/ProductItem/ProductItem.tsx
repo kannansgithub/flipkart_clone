@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Product } from '../../../models/Product';
 import Checkbox from '../../Controls/CheckBox/Checkbox';
+import ProductTitle from '../../Controls/ProductTitle/ProductTitle';
+import Rating from '../../Controls/Rating/Rating';
 type Props = {
   product: Product;
   className?: string;
@@ -27,18 +29,13 @@ const ProductItem = ({ product, className }: Props) => {
           />
         </div>
         <div className="px-6 w-2/4">
-          <div
-            className={`text-2xl font-semibold ${className ? className : null}`}
-          >
-            {product.title}
-          </div>
+          <ProductTitle title={product.title} className={className} />
           <div className="flex gap-1">
-            <div className=" bg-rating text-white px-2 rounded-md">
-              {product.rating.toFixed(1)}★
-            </div>
-            <div className="text-fheader font-semibold text-lg">
-              1,74,562 Ratings & 9,619 Reviews
-            </div>
+            <Rating
+              rating={product.rating}
+              rattingCount="1,74,562"
+              reviewCount="9,619"
+            />
           </div>
           <div className="m-4 ">
             <ul className="list-disc marker:text-fheader font-semibold">

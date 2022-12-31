@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
+import Broadcom from '../../components/Broadcom/Broadcom';
 import HeaderItem from '../../components/Category/HeaderItem/HeaderItem';
 import NonImageMenuBar from '../../components/Category/NonImageMenuBar/NonImageMenuBar';
 import ProductItem from '../../components/Category/ProductItem/ProductItem';
@@ -175,28 +176,7 @@ const SearchQuery = ({
             <HelpImage />
           </div>
           <div className="w-3/4 p-5 bg-white">
-            <div className="flex text-gray-500 gap-2 mb-2">
-              <div className="hover:text-primary cursor-pointer">Home</div>
-              <Image
-                src="/img/arrow_gray.svg"
-                height={7}
-                width={7}
-                alt="arrow"
-                className="rotate-180"
-              />
-              <div className="hover:text-primary cursor-pointer">
-                Mobiles & Accessories
-              </div>
-
-              <Image
-                src="/img/arrow_gray.svg"
-                height={7}
-                width={7}
-                alt="arrow"
-                className="rotate-180"
-              />
-              <div className="hover:text-primary cursor-pointer">Mobiles</div>
-            </div>
+            <Broadcom />
             <h2 className="text-xl font-semibold">
               {`Showing 1-24 of ${totalProduct} for "${category}"`}
             </h2>
