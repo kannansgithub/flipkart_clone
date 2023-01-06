@@ -1,6 +1,7 @@
 import { AnyAction } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import FlipkartStoreApi from '../../api/FlipkartStore.Api';
+import PaymentApi from '../../api/Payment.Api';
 import { CartItem } from '../../models/Cart';
 import { RootState } from '../state/RootState';
 import {
@@ -45,3 +46,33 @@ export const AddToCart =
       payload: item,
     });
   };
+export const PlaceOrder = async () => {
+  //https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/build-integration/#12-integrate-with-checkout-on-client-side
+  // https://ngrok.com/download
+  //https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/build-integration#15-verify-payment-signature
+  const orderInfo = await PaymentApi.post(`/checkout`);
+  const options = {
+    key: 'rzp_test_OZN7XjvAckkb9u',
+    currency: orderInfo.data.currency,
+    amount: orderInfo.data.amount.toString(),
+    order_id: orderInfo.data.id,
+    name: 'Donation',
+    description: 'Thank you for nothing. Please give us some money',
+    handler: function (response: any) {
+      // alert(response.razorpay_payment_id);
+      // alert(response.razorpay_order_id);
+      // alert(response.razorpay_signature);
+      return response.razorpay_order_id;
+    },
+    prefill: {
+      name: 'Gaurav Kumar',
+      email: 'gaurav.kumar@example.com',
+      contact: '9999999999',
+    },
+    notes: {
+      address: 'Razorpay Corporate Office',
+    },
+  };
+  const paymentObject = (window as any).Razorpay(options);
+  paymentObject.open();
+};
