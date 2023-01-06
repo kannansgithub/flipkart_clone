@@ -160,14 +160,14 @@ const ProductPage = ({ id, product, fetchProduct, addToCart }: Props) => {
                 className="bg-tertiary uppercase py-5 text-white px-9 text-semibold font-xl flex gap-2"
                 onClick={HandleAddToCart}
               >
-                <IoIosCart className="mt-1 text-semibold font-xl" />
+                <IoIosCart className="mt-1 font-semibold text-xl" />
                 <span className="text-semibold font-xl">Add to Cart</span>
               </button>
               <button
                 className="bg-secondary uppercase py-5 text-white px-11 text-semibold font-xl flex gap-2"
                 onClick={HandleBuyNow}
               >
-                <IoIosFlash className="mt-1 text-semibold font-xl" />
+                <IoIosFlash className="mt-1 font-semibold text-xl" />
                 <span>Buy Now</span>
               </button>
             </div>

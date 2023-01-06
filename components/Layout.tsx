@@ -9,13 +9,13 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <div
-      className="h-full w-full "
+      className="h-full w-full bg-lightgray "
       onScroll={() => {
         console.log('scrolling');
       }}
     >
       <Navbar />
-      <main>{children}</main>
+      <main className="">{children}</main>
       <Footer />
     </div>
   );

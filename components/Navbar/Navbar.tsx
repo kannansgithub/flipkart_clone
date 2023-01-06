@@ -15,12 +15,14 @@ const Navbar = ({ totalItems }: Props) => {
     <div className={`${classes.navbarMain}`}>
       <div className={classes.navbarContainer}>
         <div className="flex flex-col mt-1">
-          <Image
-            src="/img/logo.png"
-            alt="Flipkart logo"
-            height={27}
-            width={100}
-          />
+          <Link href="/">
+            <Image
+              src="/img/logo.png"
+              alt="Flipkart logo"
+              height={27}
+              width={100}
+            />
+          </Link>
 
           <Link href="/plus" className="hover:underline">
             <div className="flex flex-row gap-1">
@@ -43,7 +45,7 @@ const Navbar = ({ totalItems }: Props) => {
         <NavLink href="/" text="Become a Seller"></NavLink>
         <NavLink href="/" text="More" sufixIcon="/img/down-arrow.png"></NavLink>
         <NavLink
-          href="/"
+          href="/viewcart"
           text="Cart"
           prefixIconUrl="/img/cart.svg"
           items={totalItems}
