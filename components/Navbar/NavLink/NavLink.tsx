@@ -12,9 +12,9 @@ type Props = {
 function NavLink({ text, href, prefixIconUrl, sufixIcon, items }: Props) {
   return (
     <>
-      <div className="flex gap-1 text-white font-semibold my-3 text-lg">
+      <div className="flex gap-1 text-white font-semibold my-3 text-lg relative">
         {items ? (
-          <div className="bg-red-500 flex justify-center items-center h-5 w-5 rounded-full p-2 text-sm">
+          <div className="bg-red-500 flex justify-center items-center h-5 w-5 rounded-full p-2 text-sm absolute -mt-4">
             {items}
           </div>
         ) : null}
