@@ -5,5 +5,4 @@ export interface ProductState {
   productList: Product[];
   selectedProduct?: Product;
   ItemInCart: CartItem[];
-  orderId: string;
 }

@@ -152,7 +152,6 @@ const index = ({ itemsInCart, placeOrder }: Props) => {
 };
 const mapState = (state: RootState) => ({
   itemsInCart: state?.productReducer.ItemInCart as CartItem[],
-  orderId: state?.productReducer.orderId as string,
 });
 
 const mapDispatch = {
