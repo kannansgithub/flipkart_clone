@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { DonutChart } from 'react-circle-chart';
 import RoundChart from '../RoundChart/RoundChart';
 import Stars from '../Stars/Stars';
 type Props = {
